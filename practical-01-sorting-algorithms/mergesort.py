@@ -1,76 +1,70 @@
-import time
+#include <iostream>
+using namespace std;
 
-# Merge Function
-def merge(arr, left, mid, right):
-    n1 = mid - left + 1
-    n2 = right - mid
+void merge(int arr[], int left, int mid, int right) {
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
 
-    L = arr[left:mid + 1]
-    R = arr[mid + 1:right + 1]
+    int L[n1], R[n2];
 
-    i = j = 0
-    k = left
+    for (int i = 0; i < n1; i++)
+        L[i] = arr[left + i];
 
-    while i < n1 and j < n2:
-        if L[i] <= R[j]:
-            arr[k] = L[i]
-            i += 1
-        else:
-            arr[k] = R[j]
-            j += 1
-        k += 1
+    for (int j = 0; j < n2; j++)
+        R[j] = arr[mid + 1 + j];
 
-    while i < n1:
-        arr[k] = L[i]
-        i += 1
-        k += 1
+    int i = 0, j = 0, k = left;
 
-    while j < n2:
-        arr[k] = R[j]
-        j += 1
-        k += 1
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) {
+            arr[k] = L[i];
+            i++;
+        } else {
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
+    }
 
-# Merge Sort Function
-def merge_sort(arr, left, right):
-    if left < right:
-        mid = (left + right) // 2
+    while (i < n1) {
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
 
-        merge_sort(arr, left, mid)
-        merge_sort(arr, mid + 1, right)
+    while (j < n2) {
+        arr[k] = R[j];
+        j++;
+        k++;
+    }
+}
 
-        merge(arr, left, mid, right)
+void mergeSort(int arr[], int left, int right) {
+    if (left < right) {
+        int mid = (left + right) / 2;
 
-# User Input
-n = int(input("Enter the number of elements: "))
+        mergeSort(arr, left, mid);
+        mergeSort(arr, mid + 1, right);
 
-arr = []
+        merge(arr, left, mid, right);
+    }
+}
 
-print("Enter the elements:")
-for i in range(n):
-    arr.append(int(input()))
+int main() {
+    int n;
+    cin >> n;
 
-# Start Execution Time
-start_time = time.perf_counter()
+    int arr[n];
 
-# Perform Merge Sort
-merge_sort(arr, 0, n - 1)
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
 
-# End Execution Time
-end_time = time.perf_counter()
+    mergeSort(arr, 0, n - 1);
 
-# Output
-print("\nSorted Array:")
-print(arr)
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
 
-# Time Complexity
-print("\nTime Complexity:")
-print("Best Case   : O(n log n)")
-print("Average Case: O(n log n)")
-print("Worst Case  : O(n log n)")
-
-# Space Complexity
-print("\nSpace Complexity: O(n)")
-
-# Execution Time
-execution_time = end_time - start_time
-print(f"\nExecution Time: {execution_time:.10f} seconds")
+    return 0;
+}

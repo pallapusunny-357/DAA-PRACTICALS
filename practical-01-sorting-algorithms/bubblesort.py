@@ -1,46 +1,36 @@
-import time
+#include <iostream>
+using namespace std;
 
-# User Input
-n = int(input("Enter the number of elements: "))
+int main() {
+    int n;
+    cout << "Enter the number of elements: ";
+    cin >> n;
 
-arr = []
+    int arr[n];
 
-print("Enter the elements:")
-for i in range(n):
-    arr.append(int(input()))
+    cout << "Enter the elements:\n";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
 
-# Start Execution Time
-start_time = time.perf_counter()
+    for (int i = 0; i < n - 1; i++) {
+        bool swapped = false;
 
-# Optimized Bubble Sort
-for i in range(n - 1):
-    swapped = False
+        for (int j = 0; j < n - 1 - i; j++) {
+            if (arr[j] > arr[j + 1]) {
+                swap(arr[j], arr[j + 1]);
+                swapped = true;
+            }
+        }
 
-    for j in range(n - 1 - i):
-        if arr[j] > arr[j + 1]:
-            arr[j], arr[j + 1] = arr[j + 1], arr[j]
-            swapped = True
+        if (!swapped)
+            break;
+    }
 
-    # If no swaps occurred, array is already sorted
-    if not swapped:
-        break
+    cout << "\nSorted Array:\n";
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
 
-# End Execution Time
-end_time = time.perf_counter()
-
-# Output
-print("\nSorted Array:")
-print(arr)
-
-# Time Complexity
-print("\nTime Complexity:")
-print("Best Case   : O(n)")
-print("Average Case: O(n²)")
-print("Worst Case  : O(n²)")
-
-# Space Complexity
-print("\nSpace Complexity: O(1)")
-
-# Execution Time
-execution_time = end_time - start_time
-print(f"\nExecution Time: {execution_time:.10f} seconds")
+    return 0;
+}

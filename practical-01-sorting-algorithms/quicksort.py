@@ -1,58 +1,45 @@
-import time
+#include <iostream>
+using namespace std;
 
-# Function to perform partition
-def partition(arr, low, high):
-    pivot = arr[high]
-    i = low - 1
+int partition(int arr[], int low, int high) {
+    int pivot = arr[high];
+    int i = low - 1;
 
-    for j in range(low, high):
-        if arr[j] <= pivot:
-            i += 1
-            arr[i], arr[j] = arr[j], arr[i]
+    for (int j = low; j < high; j++) {
+        if (arr[j] <= pivot) {
+            i++;
+            swap(arr[i], arr[j]);
+        }
+    }
 
-    arr[i + 1], arr[high] = arr[high], arr[i + 1]
-    return i + 1
+    swap(arr[i + 1], arr[high]);
+    return i + 1;
+}
 
-# Function to perform Quick Sort
-def quick_sort(arr, low, high):
-    if low < high:
-        pi = partition(arr, low, high)
+void quickSort(int arr[], int low, int high) {
+    if (low < high) {
+        int pi = partition(arr, low, high);
 
-        quick_sort(arr, low, pi - 1)
-        quick_sort(arr, pi + 1, high)
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
+}
 
-# User Input
-n = int(input("Enter the number of elements: "))
+int main() {
+    int n;
+    cin >> n;
 
-arr = []
-print("Enter the elements:")
-for i in range(n):
-    arr.append(int(input()))
+    int arr[n];
 
-# Start Execution Time
-start_time = time.perf_counter()
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
 
-# Perform Quick Sort
-quick_sort(arr, 0, n - 1)
+    quickSort(arr, 0, n - 1);
 
-# End Execution Time
-end_time = time.perf_counter()
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
 
-# Output
-print("\nSorted Array:")
-print(arr)
-
-# Time Complexity
-print("\nTime Complexity:")
-print("Best Case   : O(n log n)")
-print("Average Case: O(n log n)")
-print("Worst Case  : O(n²)")
-
-# Space Complexity
-print("\nSpace Complexity:")
-print("Average Case: O(log n)")
-print("Worst Case  : O(n)")
-
-# Execution Time
-execution_time = end_time - start_time
-print(f"\nExecution Time: {execution_time:.10f} seconds")
+    return 0;
+}

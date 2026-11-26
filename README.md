@@ -4,33 +4,33 @@ This repository contains clean, optimized Python implementations of core **Desig
 
 ---
 
-## 📁 Repository Structure
+## 🧱 Repository Structure
 
 ```text
 DAA-practicals/
 ├── practical-01-sorting-algorithms/
-│   ├── bubblesort.py        # Bubble Sort (Optimized with early exit)
-│   ├── insertionsort.py     # Insertion Sort
-│   ├── mergesort.py         # Merge Sort (Divide & Conquer)
-│   ├── quicksort.py         # Quick Sort (Divide & Conquer)
-│   ├── selectionsort.py     # Selection Sort
-│   └── README.md            # Detailed documentation for Practical 01
+│   ├── bubblesort.py         # Bubble Sort (Optimized with early exit)
+│   ├── insertionsort.py      # Insertion Sort
+│   ├── mergesort.py          # Merge Sort (Divide & Conquer)
+│   ├── quicksort.py          # Quick Sort (Divide & Conquer)
+│   ├── selectionsort.py      # Selection Sort
+│   └── README.md             # Detailed documentation for Practical 01
 ├── practical-02-searching-algorithms/
-│   ├── linear_search.py     # Linear Search
-│   ├── binary_search.py     # Binary Search (Iterative/Recursive)
-│   └── README.md            # Detailed documentation for Practical 02
+│   ├── linear_search.py      # Linear Search
+│   ├── binary_search.py      # Binary Search (Iterative/Recursive)
+│   └── README.md             # Detailed documentation for Practical 02
 ├── practical-03-max-heap/
-│   ├── max_heap.py          # Max Heap Operations (Build Heap, Insert, Delete Max)
-│   └── README.md            # Detailed documentation for Practical 03
+│   ├── max_heap.py           # Max Heap Operations (Build Heap, Insert, Delete Max)
+│   └── README.md             # Detailed documentation for Practical 03
 ├── practical-04-factorial-comparison/
 │   ├── factorial_comparison.py  # Iterative vs Recursive Factorial with timing
-│   └── README.md            # Detailed documentation for Practical 04
+│   └── README.md             # Detailed documentation for Practical 04
 ├── practical-05-knapsack-dp/
 │   ├── knapsack_dp.py    # 0/1 Knapsack Problem using Dynamic Programming
 │   └── README.md         # Detailed documentation for Practical 05
 ├── practical-06-matrix-chain-multiplication/
 │   ├── matrix_chain_multiplication.py  # Matrix Chain Multiplication using DP
-│   └── README.md                     # Detailed documentation for Practical 06
+│   └── README.md                        # Detailed documentation for Practical 06
 ├── practical-07-coin-change-dp/
 │   ├── coin_change_dp.py    # Coin Change Problem using Dynamic Programming
 │   └── README.md            # Detailed documentation for Practical 07
@@ -50,12 +50,12 @@ DAA-practicals/
 ├── practical-12-travelling-salesman/
 │   ├── travelling_salesman.py # Travelling Salesman Problem (Held-Karp DP)
 │   └── README.md             # Detailed documentation for Practical 12
-├── README.md
+└── README.md
 ```
 
 ---
 
-## ⚡ Algorithms & Complexity Summary
+## 📊 Algorithms & Complexity Summary
 
 ### 1. Sorting Algorithms (`practical-01-sorting-algorithms`)
 
@@ -139,12 +139,12 @@ DAA-practicals/
 
 ---
 
-## 💻 How to Run
+## 🚀 How to Run
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/gnaneswar449/DAA-practicals.git
-   cd DAA-practicals
+   git clone https://github.com/pallapusunny-357/DAA-PRACTICALS.git
+   cd DAA-PRACTICALS
    ```
 
 2. Run any sorting algorithm (e.g., Quick Sort):
@@ -209,8 +209,7 @@ DAA-practicals/
 
 ---
 
-## 👨‍💻 Author
+## 🧑‍💻 Author
 
-**Gnaneswar Vuyyuri**  
-- GitHub: [@gnaneswar449](https://github.com/gnaneswar449)
-- Email: vuyyurignaneswar90@gmail.com
+**pallapusunny-357**  
+- GitHub: [@pallapusunny-357](https://github.com/pallapusunny-357)
